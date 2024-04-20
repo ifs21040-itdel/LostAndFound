@@ -1,20 +1,18 @@
 package com.ifs21040.lostandfound.presentation.login
 
 import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
-import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
-import com.ifs21040.lostandfound.ViewModelFactory
 import com.ifs21040.lostandfound.data.pref.UserModel
 import com.ifs21040.lostandfound.data.remote.MyResult
+import com.ifs21040.lostandfound.databinding.ActivityLoginBinding
+import com.ifs21040.lostandfound.presentation.ViewModelFactory
 import com.ifs21040.lostandfound.presentation.main.MainActivity
 import com.ifs21040.lostandfound.presentation.register.RegisterActivity
-import com.ifs21040.lostandfound.databinding.ActivityLoginBinding
-import com.ifs21049.lostandfound.databinding.ActivityLoginBinding
-import com.ifs21049.lostandfound.presentation.login.LoginViewModel
 import kotlinx.coroutines.launch
 
 class LoginActivity : AppCompatActivity() {
@@ -32,11 +30,11 @@ class LoginActivity : AppCompatActivity() {
         setupAction()
     }
 
-    private fun setupView(){
+    private fun setupView() {
         showLoading(false)
     }
 
-    private fun setupAction(){
+    private fun setupAction() {
         binding.apply {
             // Memberikan aksis jika text ke tampilan register dipilih
             tvLoginToRegister.setOnClickListener {
@@ -64,7 +62,7 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    private fun observeLogin(email: String, password: String){
+    private fun observeLogin(email: String, password: String) {
         viewModel.login(
             email,
             password
@@ -107,7 +105,7 @@ class LoginActivity : AppCompatActivity() {
         binding.btnLogin.text = if (isLoading) "" else "Login"
     }
 
-    private fun openRegisterActivity(){
+    private fun openRegisterActivity() {
         val intent = Intent(applicationContext, RegisterActivity::class.java)
         intent.flags =
             Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
@@ -116,7 +114,7 @@ class LoginActivity : AppCompatActivity() {
         finish()
     }
 
-    private fun openMainActivity(){
+    private fun openMainActivity() {
         val intent = Intent(applicationContext, MainActivity::class.java)
         intent.flags =
             Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK

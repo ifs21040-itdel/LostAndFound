@@ -1,23 +1,17 @@
-package com.ifs21040.lostandfound
+package com.ifs21040.lostandfound.presentation
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.ifs21040.lostandfound.di.Injection
 import com.ifs21040.lostandfound.data.repository.AuthRepository
 import com.ifs21040.lostandfound.data.repository.LostFoundRepository
 import com.ifs21040.lostandfound.data.repository.UserRepository
+import com.ifs21040.lostandfound.di.Injection
 import com.ifs21040.lostandfound.presentation.login.LoginViewModel
 import com.ifs21040.lostandfound.presentation.lostfound.LostFoundViewModel
 import com.ifs21040.lostandfound.presentation.main.MainViewModel
-import com.ifs21049.lostandfound.presentation.main.MainViewModel
 import com.ifs21040.lostandfound.presentation.profile.ProfileViewModel
-import com.ifs21049.lostandfound.presentation.profile.ProfileViewModel
 import com.ifs21040.lostandfound.presentation.register.RegisterViewModel
-import com.ifs21049.lostandfound.presentation.login.LoginViewModel
-import com.ifs21049.lostandfound.presentation.lostfound.LostFoundViewModel
-import com.ifs21049.lostandfound.presentation.register.RegisterViewModel
-
 
 class ViewModelFactory(
     private val authRepository: AuthRepository,

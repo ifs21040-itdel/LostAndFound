@@ -1,22 +1,18 @@
 package com.ifs21040.lostandfound.presentation.profile
 
 import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
-import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.ifs21040.lostandfound.R
-import com.ifs21040.lostandfound.ViewModelFactory
 import com.ifs21040.lostandfound.data.remote.MyResult
+import com.ifs21040.lostandfound.data.remote.response.DataUserResponse
+import com.ifs21040.lostandfound.databinding.ActivityProfileBinding
+import com.ifs21040.lostandfound.presentation.ViewModelFactory
 import com.ifs21040.lostandfound.presentation.login.LoginActivity
-import com.ifs21049.lostandfound.R
-import com.ifs21049.lostandfound.data.remote.response.DataUserResponse
-import com.ifs21049.lostandfound.databinding.ActivityProfileBinding
-import com.ifs21049.lostandfound.presentation.ViewModelFactory
-import com.ifs21049.lostandfound.presentation.login.LoginActivity
-import com.ifs21049.lostandfound.presentation.profile.ProfileViewModel
 
 class ProfileActivity : AppCompatActivity() {
     private lateinit var binding: ActivityProfileBinding
@@ -84,7 +80,7 @@ class ProfileActivity : AppCompatActivity() {
                 val urlImg = "https://public-api.delcom.org/${profile.user.photo}"
                 Glide.with(this@ProfileActivity)
                     .load(urlImg)
-                    .placeholder(R.drawable.ic_person)
+                    .placeholder(R.drawable.icon)
                     .into(ivProfile)
             }
 

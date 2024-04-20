@@ -1,9 +1,8 @@
-package com.ifs21049.lostandfound.presentation.lostfound
+package com.ifs21040.lostandfound.presentation.lostfound
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
-import com.ifs21040.lostandfound.ViewModelFactory
 import com.ifs21040.lostandfound.data.remote.MyResult
 import com.ifs21040.lostandfound.data.remote.response.DataAddLostFoundResponse
 import com.ifs21040.lostandfound.data.remote.response.DelcomLostFoundResponse
@@ -15,7 +14,7 @@ class LostFoundViewModel(
     private val lostfoundRepository: LostFoundRepository
 ) : ViewModel() {
 
-    fun getLostFound(lostfoundId: Int): LiveData<MyResult<DelcomLostFoundResponse>>{
+    fun getLostFound(lostfoundId: Int): LiveData<MyResult<DelcomLostFoundResponse>> {
         return lostfoundRepository.getLostFound(lostfoundId).asLiveData()
     }
 
@@ -23,7 +22,7 @@ class LostFoundViewModel(
         title: String,
         description: String,
         status: String
-    ): LiveData<MyResult<DataAddLostFoundResponse>>{
+    ): LiveData<MyResult<DataAddLostFoundResponse>> {
         return lostfoundRepository.postLostFound(
             title,
             description,

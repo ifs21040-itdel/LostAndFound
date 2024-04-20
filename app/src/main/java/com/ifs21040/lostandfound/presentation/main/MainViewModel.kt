@@ -4,7 +4,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
-import com.ifs21040.lostandfound.ViewModelFactory
 import com.ifs21040.lostandfound.data.pref.UserModel
 import com.ifs21040.lostandfound.data.remote.MyResult
 import com.ifs21040.lostandfound.data.remote.response.DelcomLostFoundsResponse

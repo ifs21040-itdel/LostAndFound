@@ -6,16 +6,11 @@ import android.os.Bundle
 import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
-import com.ifs21040.lostandfound.ViewModelFactory
-import com.ifs21040.lostandfound.data.remote.MyResult
 import com.ifs21040.lostandfound.R
+import com.ifs21040.lostandfound.data.remote.MyResult
 import com.ifs21040.lostandfound.databinding.ActivityRegisterBinding
 import com.ifs21040.lostandfound.presentation.ViewModelFactory
 import com.ifs21040.lostandfound.presentation.login.LoginActivity
-import com.ifs21049.lostandfound.databinding.ActivityRegisterBinding
-import com.ifs21049.lostandfound.presentation.login.LoginActivity
-import com.ifs21049.lostandfound.presentation.register.RegisterViewModel
-
 
 class RegisterActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRegisterBinding

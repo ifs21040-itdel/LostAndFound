@@ -4,16 +4,11 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
-import com.ifs21040.lostandfound.ViewModelFactory
 import com.ifs21040.lostandfound.data.remote.MyResult
 import com.ifs21040.lostandfound.data.remote.response.DataUserResponse
 import com.ifs21040.lostandfound.data.repository.AuthRepository
 import com.ifs21040.lostandfound.data.repository.UserRepository
-import com.ifs21049.lostandfound.data.remote.MyResult
-import com.ifs21049.lostandfound.data.remote.response.DataUserResponse
-import com.ifs21049.lostandfound.data.repository.AuthRepository
-import com.ifs21049.lostandfound.data.repository.UserRepository
-import com.ifs21049.lostandfound.presentation.ViewModelFactory
+import com.ifs21040.lostandfound.presentation.ViewModelFactory
 import kotlinx.coroutines.launch
 
 class ProfileViewModel(

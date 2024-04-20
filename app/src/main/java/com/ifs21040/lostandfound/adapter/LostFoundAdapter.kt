@@ -1,6 +1,5 @@
 package com.ifs21040.lostandfound.adapter
 
-
 import android.graphics.Color
 import android.text.Spannable
 import android.text.SpannableString
@@ -11,10 +10,10 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.ifs21040.lostandfound.data.remote.response.LostFoundsItemResponse
-import com.ifs21049.lostandfound.databinding.ItemRowLostfoundBinding
+import com.ifs21040.lostandfound.databinding.ItemRowLostfoundBinding
 
-class LostFoundsAdapter :
-    ListAdapter<LostFoundsItemResponse, LostFoundsAdapter.MyViewHolder>(DIFF_CALLBACK) {
+class LostFoundAdapter :
+    ListAdapter<LostFoundsItemResponse, LostFoundAdapter.MyViewHolder>(DIFF_CALLBACK) {
 
     private lateinit var onItemClickCallback: OnItemClickCallback
     private var originalData = mutableListOf<LostFoundsItemResponse>()

@@ -3,12 +3,11 @@ package com.ifs21040.lostandfound.presentation.login
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
-import com.ifs21040.lostandfound.ViewModelFactory
 import com.ifs21040.lostandfound.data.pref.UserModel
 import com.ifs21040.lostandfound.data.remote.MyResult
 import com.ifs21040.lostandfound.data.remote.response.DataLoginResponse
 import com.ifs21040.lostandfound.data.repository.AuthRepository
-
+import com.ifs21040.lostandfound.presentation.ViewModelFactory
 
 class LoginViewModel(
     private val authRepository: AuthRepository,

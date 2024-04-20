@@ -2,6 +2,7 @@ package com.ifs21040.lostandfound.presentation.lostfound
 
 import android.content.Intent
 import android.graphics.Color
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Spannable
 import android.text.SpannableString
@@ -11,16 +12,12 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
-import androidx.appcompat.app.AppCompatActivity
-import com.ifs21040.lostandfound.ViewModelFactory
-import com.ifs21040.lostandfound.data.remote.MyResult
-import com.ifs21040.lostandfound.helper.Utils.Companion.observeOnce
 import com.ifs21040.lostandfound.data.model.DelcomLostFound
+import com.ifs21040.lostandfound.data.remote.MyResult
 import com.ifs21040.lostandfound.data.remote.response.LostFoundResponse
 import com.ifs21040.lostandfound.databinding.ActivityLostFoundDetailBinding
-import com.ifs21049.lostandfound.databinding.ActivityLostFoundDetailBinding
-import com.ifs21049.lostandfound.presentation.lostfound.LostFoundManageActivity
-import com.ifs21049.lostandfound.presentation.lostfound.LostFoundViewModel
+import com.ifs21040.lostandfound.helper.Utils.Companion.observeOnce
+import com.ifs21040.lostandfound.presentation.ViewModelFactory
 import java.io.File
 
 class LostFoundDetailActivity : AppCompatActivity() {

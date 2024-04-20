@@ -1,36 +1,29 @@
 package com.ifs21040.lostandfound.presentation.main
 
 import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.SearchView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.ifs21040.lostandfound.ViewModelFactory
-import com.ifs21040.lostandfound.adapter.LostFoundsAdapter
-import com.ifs21040.lostandfound.data.remote.MyResult
 import com.ifs21040.lostandfound.R
+import com.ifs21040.lostandfound.adapter.LostFoundAdapter
+import com.ifs21040.lostandfound.data.remote.MyResult
 import com.ifs21040.lostandfound.data.remote.response.DelcomLostFoundsResponse
 import com.ifs21040.lostandfound.data.remote.response.LostFoundsItemResponse
 import com.ifs21040.lostandfound.databinding.ActivityMainBinding
 import com.ifs21040.lostandfound.helper.Utils.Companion.observeOnce
 import com.ifs21040.lostandfound.presentation.ViewModelFactory
 import com.ifs21040.lostandfound.presentation.login.LoginActivity
-import com.ifs21040.lostandfound.presentation.profile.ProfileActivity
 import com.ifs21040.lostandfound.presentation.lostfound.LostFoundDetailActivity
 import com.ifs21040.lostandfound.presentation.lostfound.LostFoundManageActivity
-import com.ifs21049.lostandfound.R
-import com.ifs21049.lostandfound.databinding.ActivityMainBinding
-import com.ifs21049.lostandfound.presentation.login.LoginActivity
-import com.ifs21049.lostandfound.presentation.lostfound.LostFoundDetailActivity
-import com.ifs21049.lostandfound.presentation.lostfound.LostFoundManageActivity
-import com.ifs21049.lostandfound.presentation.main.MainViewModel
-import com.ifs21049.lostandfound.presentation.profile.ProfileActivity
+import com.ifs21040.lostandfound.presentation.profile.ProfileActivity
+import com.ifs21040.lostandfound.presentation.main.MainActivity
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -150,10 +143,10 @@ class MainActivity : AppCompatActivity() {
             showComponentNotEmpty(true)
             showEmptyError(false)
 
-            val adapter = LostFoundsAdapter()
+            val adapter = LostFoundAdapter()
             adapter.submitOriginalList(lostfounds)
             binding.rvMainLostFounds.adapter = adapter
-            adapter.setOnItemClickCallback(object : LostFoundsAdapter.OnItemClickCallback {
+            adapter.setOnItemClickCallback(object : LostFoundAdapter.OnItemClickCallback {
                 override fun onCheckedChangeListener(
                     lostfound: LostFoundsItemResponse,
                     isCompleted: Boolean

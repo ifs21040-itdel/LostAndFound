@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:paddingBottom="50dp">
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -30,7 +30,7 @@
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            app:layout_constraintTop_toBottomOf="@+id/login" />
         <EditText
             android:id="@+id/etRegisterEmail"
             android:layout_width="0dp"
@@ -45,7 +45,7 @@
             android:padding="15dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+            app:layout_constraintTop_toBottomOf="@+id/email" />
         <EditText
             android:id="@+id/etRegisterPassword"
             android:layout_width="0dp"
@@ -54,14 +54,14 @@
             android:layout_marginEnd="24dp"
             android:background="@android:drawable/editbox_background"
             android:ems="10"
-            android:hint="Masukkan Password"
+            android:hint="Masukkan password kamu"
             android:inputType="text|textPassword"
             android:minHeight="48dp"
             android:padding="15dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView4" />
+            app:layout_constraintTop_toBottomOf="@+id/password" />
         <EditText
             android:id="@+id/etRegisterName"
             android:layout_width="0dp"
@@ -70,7 +70,7 @@
             android:layout_marginEnd="24dp"
             android:background="@android:drawable/editbox_background"
             android:ems="10"
-            android:hint="Masukkan Nama"
+            android:hint="Masukkan nama kamu"
             android:inputType="text"
             android:minHeight="48dp"
             android:padding="15dp"
@@ -98,7 +98,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView2" />
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
@@ -108,7 +108,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/etRegisterName" />
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/password"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"

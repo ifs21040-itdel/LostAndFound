@@ -3,7 +3,6 @@ package com.ifs21040.lostandfound.presentation.register
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
-import com.ifs21040.lostandfound.ViewModelFactory
 import com.ifs21040.lostandfound.data.remote.MyResult
 import com.ifs21040.lostandfound.data.remote.response.DelcomResponse
 import com.ifs21040.lostandfound.data.repository.AuthRepository
