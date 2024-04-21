@@ -7,7 +7,6 @@ import com.ifs21040.lostandfound.data.remote.MyResult
 import com.ifs21040.lostandfound.data.remote.response.DelcomResponse
 import com.ifs21040.lostandfound.data.remote.retrofit.IApiService
 import kotlinx.coroutines.flow.flow
-import okhttp3.MultipartBody
 import retrofit2.HttpException
 
 class LostFoundRepository private constructor(
@@ -44,8 +43,8 @@ class LostFoundRepository private constructor(
         lostfoundId: Int,
         title: String,
         description: String,
-        isCompleted: Boolean,
-        status: String
+        isCompleted: String,
+        status: Boolean
     ): LiveData<MyResult<DelcomResponse>> {
         return flow {
             emit(MyResult.Loading)

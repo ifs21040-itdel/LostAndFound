@@ -12,11 +12,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:visibility="visible">
+
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/appbarLostFoundManage"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="#0188A4"
+            android:background="#3F51B5"
             app:navigationIcon="@drawable/baseline_arrow_back"
             app:navigationIconTint="@color/white"
             app:title="Tambah Barang Temuan"

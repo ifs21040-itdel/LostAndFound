@@ -3,6 +3,7 @@ package com.ifs21040.lostandfound.presentation.main
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.SearchView
 import android.widget.Toast
@@ -21,6 +22,7 @@ import com.ifs21040.lostandfound.helper.Utils.Companion.observeOnce
 import com.ifs21040.lostandfound.presentation.ViewModelFactory
 import com.ifs21040.lostandfound.presentation.login.LoginActivity
 import com.ifs21040.lostandfound.presentation.lostfound.LostFoundDetailActivity
+import com.ifs21040.lostandfound.presentation.lostfound.LostFoundFavoriteActivity
 import com.ifs21040.lostandfound.presentation.lostfound.LostFoundManageActivity
 import com.ifs21040.lostandfound.presentation.profile.ProfileActivity
 import com.ifs21040.lostandfound.presentation.main.MainActivity
@@ -87,6 +89,22 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
 
+                R.id.mainMenuAllData -> {
+                    // Ketika menu "All Data" diklik, panggil fungsi getLostandFounds()
+                    observeGetLostFounds()
+                    true
+                }
+                R.id.mainMenuMyData -> {
+                    // Ketika menu "My Data" diklik, panggil fungsi getLostandFound()
+                    observeGetMyLostFounds()
+                    true
+                }
+
+                R.id.mainMenuFavoriteTodos -> {
+                    openFavoriteLostFoundActivity()
+                    true
+                }
+
                 else -> false
             }
         }
@@ -126,7 +144,40 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private fun observeGetMyLostFounds() {
+        // Panggil fungsi getLostandFounds() dengan menyertakan nilai isMe
+        viewModel.getLostFound().observe(this) { result ->
+            if (result != null) {
+                when (result) {
+                    is MyResult.Loading -> {
+                        showLoading(true)
+                    }
+                    is MyResult.Success -> {
+                        showLoading(false)
+                        loadLostFoundsToLayout(result.data)
+                    }
+                    is MyResult.Error -> {
+                        showLoading(false)
+                        showEmptyError(true)
+                    }
+                }
+            }
+        }
+    }
+
     private fun loadLostFoundsToLayout(response: DelcomLostFoundsResponse) {
+        if (response == null) {
+            // Handle null case appropriately, misalnya menampilkan pesan error atau melakukan tindakan lainnya
+            Log.e("MainActivity", "response == null")
+            return
+        } else if (response.data == null){
+            Log.e("MainActivity", "response.data == null")
+            return
+        } else if (response.data.lostFounds == null){
+            Log.e("MainActivity", "response.data.lostfounds == null")
+            return
+        }
+
         val lostfounds = response.data.lostFounds
         val layoutManager = LinearLayoutManager(this)
         binding.rvMainLostFounds.layoutManager = layoutManager
@@ -157,8 +208,8 @@ class MainActivity : AppCompatActivity() {
                         lostfound.id,
                         lostfound.title,
                         lostfound.description,
-                        isCompleted,
-                        lostfound.status
+                        lostfound.status,
+                        isCompleted
                     ).observeOnce {
                         when (it) {
                             is MyResult.Error -> {
@@ -260,6 +311,14 @@ class MainActivity : AppCompatActivity() {
             LostFoundManageActivity::class.java
         )
         intent.putExtra(LostFoundManageActivity.KEY_IS_ADD, true)
+        launcher.launch(intent)
+    }
+
+    private fun openFavoriteLostFoundActivity() {
+        val intent = Intent(
+            this@MainActivity,
+            LostFoundFavoriteActivity::class.java
+        )
         launcher.launch(intent)
     }
 }

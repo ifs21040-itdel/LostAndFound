@@ -41,7 +41,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
-            android:text="Status Barang"
+            android:text="Status"
             android:textColor="#AAAAAA"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"

@@ -1,5 +1,6 @@
 package com.ifs21040.lostandfound.presentation.main
 
+
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
@@ -28,24 +29,28 @@ class MainViewModel(
         }
     }
 
+    fun getLostFound(): LiveData<MyResult<DelcomLostFoundsResponse>> {
+        return lostfoundRepository.getLostFounds(null, 1, null).asLiveData()
+    }
+
     fun getLostFounds(): LiveData<MyResult<DelcomLostFoundsResponse>> {
-        return lostfoundRepository.getLostFounds(null,1,null).asLiveData()
+        return lostfoundRepository.getLostFounds(null,0,null).asLiveData()
     }
 
     fun putLostFound(
-        lostfoundId: Int,
+        lostandfoundId: Int,
         title: String,
         description: String,
+        status: String,
         isCompleted: Boolean,
-        status: String
     ): LiveData<MyResult<DelcomResponse>> {
         return lostfoundRepository.putLostFound(
-            lostfoundId,
+            lostandfoundId,
             title,
             description,
+            status,
             isCompleted,
-            status
-        )
+        ).asLiveData()
     }
 
 
