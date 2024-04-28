@@ -176,5 +176,4 @@
                 tools:ignore="UseAppTint" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
-
 </LinearLayout>

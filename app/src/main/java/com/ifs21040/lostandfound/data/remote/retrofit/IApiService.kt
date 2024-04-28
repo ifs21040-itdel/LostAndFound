@@ -6,12 +6,15 @@ import com.ifs21040.lostandfound.data.remote.response.DelcomLostFoundResponse
 import com.ifs21040.lostandfound.data.remote.response.DelcomLostFoundsResponse
 import com.ifs21040.lostandfound.data.remote.response.DelcomResponse
 import com.ifs21040.lostandfound.data.remote.response.DelcomUserResponse
+import okhttp3.MultipartBody
 import retrofit2.http.DELETE
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
+import retrofit2.http.Multipart
 import retrofit2.http.POST
 import retrofit2.http.PUT
+import retrofit2.http.Part
 import retrofit2.http.Path
 import retrofit2.http.Query
 
@@ -39,7 +42,7 @@ interface IApiService {
     suspend fun postLostFound(
         @Field("title") title: String,
         @Field("description") description: String,
-        @Field("status") status: String?,
+        @Field("status") status: String
     ): DelcomAddLostFoundResponse
 
     @FormUrlEncoded
@@ -48,24 +51,32 @@ interface IApiService {
         @Path("id") lostfoundId: Int,
         @Field("title") title: String,
         @Field("description") description: String,
-        @Query("status") status: String?,
-        @Query("is_completed") isCompleted: Int?
+        @Field("status") status: String,
+        @Field("is_completed") isCompleted: Int,
     ): DelcomResponse
 
     @GET("lost-founds")
     suspend fun getLostFounds(
         @Query("is_completed") isCompleted: Int?,
-//        @Query("is_me") isMe: Int?,
-        @Query("status") status: String?
+        @Query("is_me") isMe: Int?,
+        @Query("status") status: String?,
     ): DelcomLostFoundsResponse
 
     @GET("lost-founds/{id}")
     suspend fun getLostFound(
-        @Path("id") lostfoundId: Int,
+        @Path("id") lostfoundId: Int
     ): DelcomLostFoundResponse
 
     @DELETE("lost-founds/{id}")
     suspend fun deleteLostFound(
+        @Path("id") lostfoundId: Int
+    ): DelcomResponse
+
+    @Multipart
+    @POST("lost-founds/{id}/cover")
+    suspend fun addCoverLostFound(
         @Path("id") lostfoundId: Int,
+        @Part cover: MultipartBody.Part,
     ): DelcomResponse
 }
+
