@@ -45,6 +45,8 @@ data class LostFoundsItemResponse(
 
     @field:SerializedName("status")
     var status: String
+
+
 )
 
 data class AuthorLostFoundsResponse(

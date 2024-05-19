@@ -15,7 +15,7 @@
             android:id="@+id/login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="28dp"
             android:fontFamily="@font/poppins_bold"
             android:text="Login"
             android:textSize="34sp"
@@ -31,6 +31,7 @@
             android:layout_marginStart="24dp"
             android:layout_marginEnd="24dp"
             android:background="@android:drawable/editbox_background"
+            android:backgroundTint="#E3E6F6"
             android:ems="10"
             android:hint="Masukkan email "
             android:inputType="text|textEmailAddress"
@@ -47,6 +48,7 @@
             android:layout_marginStart="24dp"
             android:layout_marginEnd="24dp"
             android:background="@android:drawable/editbox_background"
+            android:backgroundTint="#E3E6F6"
             android:ems="10"
             android:hint="Masukkan password"
             android:inputType="text|textPassword"
@@ -61,9 +63,10 @@
             android:id="@+id/imageView"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="60dp"
             android:src="@drawable/icon"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -87,20 +90,24 @@
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/etLoginEmail" />
+
         <Button
             android:id="@+id/btnLogin"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="44dp"
             android:layout_marginEnd="24dp"
+            android:backgroundTint="#3F51B5"
             android:padding="15dp"
             android:text="Login"
             android:textColor="@color/primaryColor"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/etLoginPassword" />
+
         <ProgressBar
             android:id="@+id/pbLogin"
             style="?android:attr/progressBarStyle"

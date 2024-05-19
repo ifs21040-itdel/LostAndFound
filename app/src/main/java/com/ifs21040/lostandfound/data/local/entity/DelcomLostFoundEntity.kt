@@ -5,10 +5,11 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import kotlinx.parcelize.Parcelize
+
 @Parcelize
 @Entity(tableName = "delcom_lostfounds")
 
-data class DelcomLostFoundEntity (
+data class DelcomLostFoundEntity(
     @PrimaryKey(autoGenerate = false)
     val id: Int,
     @ColumnInfo(name = "title")
@@ -25,6 +26,7 @@ data class DelcomLostFoundEntity (
     var updatedAt: String,
     @ColumnInfo(name = "status")
     var status: String,
-    @ColumnInfo(name = "userId")
-    var userId: Int
+
+    @ColumnInfo(name = "user_id")
+    var userId: Int,
 ) : Parcelable
